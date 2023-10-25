@@ -21,23 +21,33 @@
 /* BASE STYLES
 /*******************************************/
 
-
+/* background collor #1b1b1b */
 
 
 /******************************************
 /* LAYOUT
 /*******************************************/
+body {
+     height: 100%;
+     overflow: hidden;
+     padding: 20%;
+     background-color: #1b1b1b;
+     color: gray;
+}
 main {
-     display: flex;    
+     display: flex; 
+     flex-direction: column;   
      justify-content: center;
-     align-content: center;
+     align-items: center;
      
      margin-left: auto;
      margin-right: auto;
-     padding-top: 30%;
-     padding-bottom: 30%;
+     padding-top: 20%;
+     padding-bottom: 20%;
      height: max-content;
 
+     border-radius: 2%;
+     border: 2px solid gray;
 }
 
 .tip-radio-sec {
