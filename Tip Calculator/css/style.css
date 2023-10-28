@@ -20,7 +20,9 @@
 /******************************************
 /* BASE STYLES
 /*******************************************/
-
+html {
+     font-size: 12px;
+}
 /* background collor #1b1b1b */
 
 
@@ -52,8 +54,20 @@ main {
 
 .tip-radio-sec {
      display: flex;
+     flex-direction: column;
      
 }
+
+.form_sections {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 1rem;
+}
+
+#user_input {
+     margin: 2rem;
+}
+
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/

@@ -15,31 +15,34 @@
 	<body>
 		<main>
 			<section>
-				<input type="text">
+				<h1>Tip Calculator</h1>				
 			</section>
 			<section class="tip-radio-sec">
-				<fieldset>
-					<legend>Select the tip amount:</legend>
-				  
-					<section>
-					  <input type="radio" id="fifteen" name="percent" value="15%" checked />
-					  <label for="fifteen">15%</label>
-					</section>
-					<section>
-					  <input type="radio" id="eighteen" name="percent" value="18%" />
-					  <label for="eighteen">18%</label>
-					</section>
-				  
-					<section>
-					  <input type="radio" id="twenty" name="percent" value="20%" />
-					  <label for="twenty">20%</label>
-					</section>					
-				  </fieldset>
-			</section>
-			<section>
-				<input type="button" id="total" name="Calculate" value="Calculate">
-				<label for=""></label>
-			</section>
+				<form>
+					<input type="text" id="user_input">
+					<fieldset>
+						<legend>Select the tip amount:</legend>
+					  
+						<section class="form_sections">
+						  <input type="radio" id="fifteen" name="percent" value="15%" checked />
+						  <label for="fifteen">15%</label>
+						</section>
+						<section class="form_sections">
+						  <input type="radio" id="eighteen" name="percent" value="18%" />
+						  <label for="eighteen">18%</label>
+						</section>
+					  
+						<section class="form_sections">
+						  <input type="radio" id="twenty" name="percent" value="20%" />
+						  <label for="twenty">20%</label>
+						</section>					
+					  </fieldset>
+					  <section class="form_sections">
+						<input type="button" id="total" name="Calculate" value="Calculate">
+						<label for=""></label>
+					  </section>
+				</form>
+			</section>			
 		</main>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
