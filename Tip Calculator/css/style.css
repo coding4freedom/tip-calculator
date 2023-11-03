@@ -32,7 +32,7 @@ html {
 body {
      height: 100%;
      overflow: hidden;
-     padding: 20%;
+     padding: 10% 20%;
      background-color: #1b1b1b;
      color: gray;
 }
@@ -44,7 +44,7 @@ main {
      
      margin-left: auto;
      margin-right: auto;
-     padding-top: 20%;
+     padding-top: 5%;
      padding-bottom: 20%;
      height: max-content;
 
@@ -62,6 +62,10 @@ main {
      display: flex;
      justify-content: center;
      margin-bottom: 1rem;
+}
+
+.form_sections input {
+     margin-right: .8rem;
 }
 
 #user_input {
