@@ -27,12 +27,11 @@ html {
 
 
 /******************************************
-/* LAYOUT
+/* LAYOUT  adjust screen window to 320 x 480
 /*******************************************/
 body {
      height: 100%;
-     overflow: hidden;
-     padding: 10% 20%;
+     margin-bottom: 0%;
      background-color: #1b1b1b;
      color: gray;
 }
@@ -44,9 +43,8 @@ main {
      
      margin-left: auto;
      margin-right: auto;
-     padding-top: 5%;
-     padding-bottom: 20%;
-     height: max-content;
+     padding: 5% 0;     
+     height: 100%;
 
      border-radius: 2%;
      border: 2px solid gray;
