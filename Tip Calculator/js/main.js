@@ -1,7 +1,8 @@
 
 // declarations
 // let percentRadioGroup = document.getElementsByName("percent");
-let percentRadioGroup = document.querySelector('input[name="percent"]:checked');
+//let percentRadioGroup = document.querySelector('input[name="percent"]:checked');
+let percentRadioGroup = document.querySelector('input[name="percent"]');
 // let userInput = document.querySelector('#user_input').value;
 let USDollar = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -15,7 +16,7 @@ document.querySelector('#total').addEventListener('click', displayTip);
 //functions
 function checkUserInput(user){ //fix this userinput error problem
     if(Number.isInteger(parseInt(user))){
-        convertToDecimal(user)
+        return convertToDecimal(user)
         console.log('checkUserInput if statement ran')
     } else{
         console.log('checkUserInput else statement ran')
@@ -36,6 +37,7 @@ function convertToDecimal(price){
 
 function displayTip(){
     let userInput = document.querySelector('#user_input').value;
+    
     if(percentRadioGroup.checked){
         console.log('displayTip if statement ran')
         // fix this line output
@@ -44,3 +46,7 @@ function displayTip(){
     console.log('displayTip ran outside of if statment')
 }
  
+// App only works when first radio button is checked, look into placing
+// the radio button selector in a for loop might have to also pass in 
+// radio button to checkUserInput function to calculat cost in 
+//  convertToDecimal
