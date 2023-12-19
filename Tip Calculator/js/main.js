@@ -2,7 +2,7 @@
 // declarations
 // let percentRadioGroup = document.getElementsByName("percent");
 //let percentRadioGroup = document.querySelector('input[name="percent"]:checked');
-let percentRadioGroup = document.querySelector('input[name="percent"]');
+// let percentRadioGroup = document.querySelector('input[name="percent"]:checked');
 // let userInput = document.querySelector('#user_input').value;
 let USDollar = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -14,9 +14,9 @@ document.querySelector('#total').addEventListener('click', displayTip);
 
 
 //functions
-function checkUserInput(user){ //fix this userinput error problem
+function checkUserInput(user, radio){ //fix this userinput error problem
     if(Number.isInteger(parseInt(user))){
-        return convertToDecimal(user)
+        return convertToDecimal(user, radio)
         console.log('checkUserInput if statement ran')
     } else{
         console.log('checkUserInput else statement ran')
@@ -25,11 +25,11 @@ function checkUserInput(user){ //fix this userinput error problem
     }
 }
 
-function convertToDecimal(price){
+function convertToDecimal(price,radio){
     // get this finish getting this code to work
     // take the userinput and the checked radio button value and get total
     // return that total in usda money
-     let cost = (parseInt(price)/100) * percentRadioGroup.value;
+     let cost = (parseInt(price)/100) * radio.value;
      console.log(`convertToDecimal function ran cost is ${cost}`)
      console.log(USDollar.format(cost))
      return USDollar.format(cost);
@@ -37,16 +37,14 @@ function convertToDecimal(price){
 
 function displayTip(){
     let userInput = document.querySelector('#user_input').value;
-    
-    if(percentRadioGroup.checked){
+    let percentRadioGroup = document.querySelector('input[name="percent"]:checked');
+
+    if(percentRadioGroup){
         console.log('displayTip if statement ran')
         // fix this line output
-        return document.querySelector("#result").innerHTML = `${checkUserInput(userInput)}`
+        return document.querySelector("#result").innerHTML = `${checkUserInput(userInput,percentRadioGroup)}`
     }
     console.log('displayTip ran outside of if statment')
 }
  
-// App only works when first radio button is checked, look into placing
-// the radio button selector in a for loop might have to also pass in 
-// radio button to checkUserInput function to calculat cost in 
-//  convertToDecimal
+// need to fix userinput so that money decimal is accepted from user input
