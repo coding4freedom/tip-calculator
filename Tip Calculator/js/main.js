@@ -48,3 +48,5 @@ function displayTip(){
 }
  
 // need to fix userinput so that money decimal is accepted from user input
+// way to fix issue change line 32 where the result of the calculation is .toFixed(2)
+// remove the parseInt on that line, then you should be able to 
