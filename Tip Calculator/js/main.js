@@ -15,7 +15,8 @@ document.querySelector('#total').addEventListener('click', displayTip);
 
 //functions
 function checkUserInput(user, radio){ //fix this userinput error problem
-    if(Number.isInteger(parseInt(user))){
+    // if(Number.isInteger(parseInt(user))){
+    if(!Number.isNaN(user)){
         return convertToDecimal(user, radio)
         console.log('checkUserInput if statement ran')
     } else{
@@ -29,7 +30,8 @@ function convertToDecimal(price,radio){
     // get this finish getting this code to work
     // take the userinput and the checked radio button value and get total
     // return that total in usda money
-     let cost = (parseInt(price)/100) * radio.value;
+    // let cost = (parseInt(price)/100) * radio.value;
+     let cost = parseFloat(price) * radio.value;
      console.log(`convertToDecimal function ran cost is ${cost}`)
      console.log(USDollar.format(cost))
      return USDollar.format(cost);
@@ -47,6 +49,7 @@ function displayTip(){
     console.log('displayTip ran outside of if statment')
 }
  
-// need to fix userinput so that money decimal is accepted from user input
-// way to fix issue change line 32 where the result of the calculation is .toFixed(2)
-// remove the parseInt on that line, then you should be able to 
+// fix line 19 user input is taking taking extra inputs like letters and symbols
+// need to fix userinput so that money decimal is accepted from user input (C)
+// way to fix issue change line 32 where the result of the calculation is .toFixed(2) (C)
+// remove the parseInt on that line, then you should be able to  (C)
