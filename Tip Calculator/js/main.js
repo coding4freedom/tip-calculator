@@ -4,6 +4,7 @@
 //let percentRadioGroup = document.querySelector('input[name="percent"]:checked');
 // let percentRadioGroup = document.querySelector('input[name="percent"]:checked');
 // let userInput = document.querySelector('#user_input').value;
+let unwanted = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','`','!','@','#','$','%','^','&','*','(',')','[',']']
 let USDollar = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -16,9 +17,11 @@ document.querySelector('#total').addEventListener('click', displayTip);
 //functions
 function checkUserInput(user, radio){ //fix this userinput error problem
     // if(Number.isInteger(parseInt(user))){
-    if(!Number.isNaN(user)){
-        return convertToDecimal(user, radio)
-        console.log('checkUserInput if statement ran')
+    if(!unwanted.includes(...user)){
+        if(!Number.isNaN(user)){
+            console.log('checkUserInput if statement ran')
+            return convertToDecimal(user, radio)              
+    }    
     } else{
         console.log('checkUserInput else statement ran')
         console.log(user)
@@ -49,7 +52,7 @@ function displayTip(){
     console.log('displayTip ran outside of if statment')
 }
  
-// fix line 19 user input is taking taking extra inputs like letters and symbols
+// fix line 20 user input is taking extra inputs like letters and symbols
 // need to fix userinput so that money decimal is accepted from user input (C)
 // way to fix issue change line 32 where the result of the calculation is .toFixed(2) (C)
 // remove the parseInt on that line, then you should be able to  (C)
