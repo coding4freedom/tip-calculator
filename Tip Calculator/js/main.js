@@ -6,7 +6,7 @@
 // let userInput = document.querySelector('#user_input').value;
 let unwanted = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','`','!','@','#','$','%','^','&','*','(',')','[',']'];
 /*let re =/([0-9]{1,3}\,[0-9]{1,3}+[.]{0,1}[0-9]{0,2})|([0-9]{1,3}\,[0-9]{1,3})|([0-9]{1,3}+[.]{0,1}[0-9]{0,2})/ */
-let re =/[0-9]{1,3}\,[0-9]{1,3}\+[.]{0,1}[0-9]{0,2}|[0-9]{1,3}\,[0-9]{1,3}|[0-9]{1,3}\+[.]{0,1}[0-9]{0,2}/
+let re =/^(\$?\d{1,3}(?:,?\d{3})*(?:\.\d{2})?|\.\d{2})?$/
 let USDollar = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
@@ -53,14 +53,19 @@ function displayTip(){
     }
     console.log('displayTip ran outside of if statment')
 }
- console.log(re.test(1,100))
+ console.log(re.test(1,100.50))
 // fix line 20 user input is taking extra inputs like letters and symbols
 // working on regex to filter user input for money here is reges so far
 // [0-9]{1,3}\,[0-9]{1,3}+[.]{0,1}[0-9]{1,2}|[0-9]{1,3}\,[0-9]{1,3}
 // regex that is working
 /* ([0-9]{1,3}\,[0-9]{1,3}+[.]{0,1}[0-9]{0,2}|[0-9]{1,3}\,[0-9]{1,3}|[0-9]{1,3}+[.]{0,1}[0-9]{0,2}) */
+/* formal regex for line 9 /[0-9]{1,3}\,[0-9]{1,3}\+[.]{0,1}[0-9]{0,2}|[0-9]{1,3}\,[0-9]{1,3}|[0-9]{1,3}\+[.]{0,1}[0-9]{0,2}/
+*/
 // line 8 was not working due to not escaping special chars
-// line 9 is working for regex but regx is falsing for sample user input
+// line 9 is working for regex but regx is falsing for sample user input (C)
+/* discovered that line was not matching due to using wrong flavor or regex from regex101 had to which over to js
+*/
+// line 9 regex works now only small issue where more number over 3 can be at begining of number
 // need to fix userinput so that money decimal is accepted from user input (C)
 // way to fix issue change line 32 where the result of the calculation is .toFixed(2) (C)
 // remove the parseInt on that line, then you should be able to  (C)
