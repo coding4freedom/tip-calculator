@@ -11,6 +11,7 @@ let USDollar = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
 })
+let sam =`7,150.00n`
 // document.querySelector('input[name="JTP"]:checked')  
 // data grabs
 document.querySelector('#total').addEventListener('click', displayTip);
@@ -20,10 +21,10 @@ document.querySelector('#total').addEventListener('click', displayTip);
 function checkUserInput(user, radio){ //fix this userinput error problem
     // if(Number.isInteger(parseInt(user))){
     if(!unwanted.includes(...user)){
-        if(!Number.isNaN(user)){
+        if(user.match(re)){//testing out regex code here original line is if(!Number.isNaN(user))
             console.log('checkUserInput if statement ran')
             return convertToDecimal(user, radio)              
-    }    
+        }else{return document.querySelector("#result").innerHTML = "You have not entered a valid input";}    
     } else{
         console.log('checkUserInput else statement ran')
         console.log(user)
@@ -53,7 +54,8 @@ function displayTip(){
     }
     console.log('displayTip ran outside of if statment')
 }
- console.log(re.test(1,100.50))
+
+ console.log(sam.match(re)) // returns null if match not found
 // fix line 20 user input is taking extra inputs like letters and symbols
 // working on regex to filter user input for money here is reges so far
 // [0-9]{1,3}\,[0-9]{1,3}+[.]{0,1}[0-9]{1,2}|[0-9]{1,3}\,[0-9]{1,3}
