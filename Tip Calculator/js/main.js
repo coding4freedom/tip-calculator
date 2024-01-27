@@ -7,12 +7,12 @@
 let unwanted = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','`','!','@','#','$','%','^','&','*','(',')','[',']'];
 /*let re =/([0-9]{1,3}\,[0-9]{1,3}+[.]{0,1}[0-9]{0,2})|([0-9]{1,3}\,[0-9]{1,3})|([0-9]{1,3}+[.]{0,1}[0-9]{0,2})/ */
 //let re =/^(\$?\d{1,3}(?:,?\d{3})*(?:\.\d{2})?|\.\d{2})?$/
-const se = /^\d{1,3}(,\d{3}){1,3}(\.\d{2})?$/
+const se = /\d{0,3}(,?\d{3}){1,3}(\.\d{2})?/
 let USDollar = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD',
 })
-let sam =`5.54n`
+let sam =`100`
 // document.querySelector('input[name="JTP"]:checked')  
 // data grabs
 document.querySelector('#total').addEventListener('click', displayTip);
@@ -43,8 +43,9 @@ function convertToDecimal(price,radio){
     // take the userinput and the checked radio button value and get total
     // return that total in usda money
     // let cost = (parseInt(price)/100) * radio.value;
-     let cost = parseFloat(price) * radio.value;
+     let cost = price * radio.value; //fix price when using parseFloat and comma it stips numbers off
      console.log(`convertToDecimal function ran cost is ${cost}`)
+     console.log(`${price} * ${radio.value}`)
      console.log(USDollar.format(cost))
      return USDollar.format(cost);
 }
@@ -61,7 +62,7 @@ function displayTip(){
     console.log('displayTip ran outside of if statment')
 }
 
-//console.log(sam.match(se))
+console.log(sam.match(se))
 // fix line 20 user input is taking extra inputs like letters and symbols
 // working on regex to filter user input for money here is reges so far
 // [0-9]{1,3}\,[0-9]{1,3}+[.]{0,1}[0-9]{1,2}|[0-9]{1,3}\,[0-9]{1,3}
