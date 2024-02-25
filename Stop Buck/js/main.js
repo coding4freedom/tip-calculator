@@ -17,7 +17,7 @@ class Target {
     }
 
     showTargetInfo() {
-        console.log(`A ${this.name} has appeared with ${this.hitPoints} HP`)
+        console.log(`A ${this.target} has appeared with ${this.hitPoints} HP`)
     }
 
 }
@@ -54,8 +54,10 @@ class Guns extends Target{
         }
     }
 
-    scoutArea() {
-        return `A ${this.target} has been spotted, the scanner is showing HP pool of ${this.hitPoints}`
+    async scoutArea() {
+        console.log("Scanning the area ... ");
+        await new Promise((resolve) => setTimeout(resolve, 2000));        
+        await this.showTargetInfo();
     }
 
     fire() {
