@@ -6,7 +6,7 @@ class Target {
 
     // Randomly selects beast from array and returns that beast
     getTarget() {
-        const beasts = ['Crocodile', 'Moose', 'Secretary bird', 'Minotaur', 'Grizzle bear', 'Komodo dragon'];
+        const beasts = ['Crocodile', 'Moose', 'Secretary bird', 'Minotaur', 'Grizzle bear', 'Komodo dragon', "Blue Troll"];
         const randmonBeast = Math.floor(Math.random() * beasts.length);
         return beasts[randmonBeast]
     }
