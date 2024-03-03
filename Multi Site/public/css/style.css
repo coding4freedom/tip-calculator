@@ -1,3 +1,4 @@
+
 /* Box Model Hack */
 * {
     box-sizing: border-box;
@@ -21,8 +22,19 @@
 /* BASE STYLES
 /*******************************************/
 
-body {
+html {
+    font-size: 16px;
+}
 
+body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    background-color: #121212;
+    color: #eee;
+}
+
+a {
+    color: #809fff;
 }
 
 
@@ -43,6 +55,10 @@ nav h3, nav ul {
     width: 50vw;
 }
 
+nav h3 {
+    margin-left: 2rem;
+}
+
 nav ul {
     display: flex;
     flex-direction: row;
@@ -50,24 +66,38 @@ nav ul {
 
 nav ul li {
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
 }
 
 .nav-links {
     justify-content: space-around;
 }
 
+li a {
+    text-decoration: none;
+}
+
 .main-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 70vh;
+}
+
+.main-content input {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 footer {
     display: flex;
     justify-content: flex-end;
     height: 10vh;
+    margin-right: 2rem;
     
 }
 
