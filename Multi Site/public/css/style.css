@@ -48,20 +48,32 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-   
+    margin: 2rem 5rem;
+    padding-bottom: .7rem;
+    border-bottom: thin solid #848499;
+}
+
+h3 {
+    margin: 0;
+}
+
+h3, span {
+    font-size: 1.5rem;
+}
+
+h3 span {
+    color: #25d38c;
 }
 
 nav h3, nav ul {
     width: 50vw;
 }
 
-nav h3 {
-    margin-left: 2rem;
-}
-
 nav ul {
     display: flex;
     flex-direction: row;
+    margin: 0;
+    text-align: center;
 }
 
 nav ul li {
@@ -70,10 +82,11 @@ nav ul li {
 }
 
 .nav-links {
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 li a {
+    font-size: 1.5rem;
     text-decoration: none;
 }
 
@@ -85,12 +98,39 @@ li a {
     height: 70vh;
 }
 
-.main-content input {
+.greeting {
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.main-content h1 {
+    color: #25d38c;
+}
+.btn-container {
+    margin-top: 3rem;
+}
+
+.start-btn {
     width: 100px;
     height: 40px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    background-color: #25d38c;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 footer {
